@@ -12,7 +12,9 @@ const defaults = {
 	image: ''
 }
 
-GlobalFonts.registerFromPath('Uni Sans Heavy.otf', 'Uni-Sans-Heavy') // ✅
+const path = require('path')
+
+GlobalFonts.registerFromPath(path.join(__dirname, 'fonts', 'Uni Sans Heavy.otf'), 'Uni-Sans-Heavy')
 
 function abbreviateNumber(number) {
 	const tier = Math.log10(number) / 3 | 0;
